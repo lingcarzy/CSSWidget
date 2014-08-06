@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>CSS-Accordion</title>
+    <style>
+        .accordion-list{height: 100%}
+        .accordion-head{height: 10%;padding: 1%;margin: 1%;background: #ccc;}
+        .accordion-content{height: 0;background: #999;overflow: hidden;}
+        .accordion-head:hover ~ .accordion-content,.accordion-hover ~ .accordion-content{height: 30%;}
+
+
+    </style>
+</head>
+<body>
+    <div class='accordion-list'>
+        <div class='accordion-item'>
+            <h3 class='accordion-head'>Section 1</h3>
+            <p class='accordion-content'>Section 1 Content</p>
+        </div>
+        <div class='accordion-item'>
+            <h3 class='accordion-head'>Section 2</h3>
+            <p class='accordion-content'>Section 2 Content</p>
+        </div>
+        <div class='accordion-item'>
+            <h3 class='accordion-head'>Section 3</h3>
+            <p class='accordion-content'>Section 3 Content</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
