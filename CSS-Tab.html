@@ -1,88 +1,57 @@
 <html>
 <head>
-    <title>CSS-Tab</title>
-    <style>
-        .tabs_box {
-            width: 50%;
-            min-height: 250px;
-            margin: 1em auto;
-            position: relative;
-        }
-        .click_tab , .hover_tab{
-            width: 25%;
-            margin-right: -1px;
-            border: 1px solid #ccc;
-            border-bottom: 0;
-            float: left;
-        }
-        .click_label , .hover_label{
-            display: block;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            background-color: #eee;
-            text-align: center;
-        }
-        .click_radio,
-        .click_tab_content,
-        .hover_tab_content{
-            position: absolute;
-            left: -999em;
-        }
-        .click_radio:checked ~ .click_tab_content,
-        .hover_tab:hover .hover_tab_content{
-            margin-top: -1px;
-            padding: 1em 2em;
-            border: 1px solid #ccc;
-            left: 0;
-            right: 0;
-        }
-        .click_radio:checked ~ .click_label,
-        .hover_tab:hover .hover_label{
-            background-color: #fff;
-            border-bottom: 1px solid #fff;
-            position: relative;
-            z-index: 1;
-        }
-    </style>
+	<title>CSS-Tab</title>
+	<style>
+		.tabs_box {
+			width: 50%;
+			margin: 0 auto;
+			height: 250px;
+		}
+		.tab{
+			position: relative;
+			width: 100%;
+		}
+		.tab_title{
+			background-color: #666;
+			color: #ccc;
+			border: 1px solid #ccc;
+			overflow:none;
+			position: relative;
+		}
+		.tab_content{
+			visibility: hidden;
+		}
+		.firstshow .tab_content,.tab_title:hover ~ .tab_content{
+			visibility: inherit;
+		}
+		.tab_title:hover{
+			background-color: #333;
+			color: #fff;
+			border-bottom: 0;
+			z-index: 1;
+		}
+	</style>
 </head>
 <body>
 <div class="tabs_box">
-    <div class="click_tab">
-        <input type="radio" id="clickTabRadio1" class="click_radio" name="tab" checked="checked" />
-        <label class="click_label" for="clickTabRadio1">选项卡1</label>
-        <div class="click_tab_content">
-            <p>我是选项卡1</p>
-        </div>
-    </div>
-    <div class="click_tab">
-        <input type="radio" id="clickTabRadio2" class="click_radio" name="tab" />
-        <label class="click_label" for="clickTabRadio2">选项卡2</label>
-        <div class="click_tab_content">
-            <p>我是选项卡2</p>
-        </div>
-    </div>
-    <div class="click_tab">
-        <input type="radio" id="clickTabRadio3" class="click_radio" name="tab" />
-        <label class="click_label" for="clickTabRadio3">选项卡3</label>
-        <div class="click_tab_content">
-            <p>我是选项卡3</p>
-        </div>
-    </div>
-</div>
-
-<div class="tabs_box">
-    <div class="hover_tab">
-        <span class="hover_label">选项1</span>
-        <div class="hover_tab_content">
-            <p>选项1的内容</p>
-        </div>
-    </div>
-    <div class="hover_tab">
-        <span class="hover_label">选项2</span>
-        <div class="hover_tab_content">
-            <p>选项2的内容</p>
-        </div>
-    </div>
+	<div class="tab firstshow">
+		<span class="tab_title">选项卡1</span>
+		<div class="tab_content">
+			<p>我是选项卡1</p>
+		</div>
+	</div>
+	<div class="tab">
+		<span class="tab_title">选项卡2</span>
+		<div class="tab_content">
+			<p>我是选项卡2</p>
+		</div>
+	</div>
+	<div class="tab">
+		<span class="tab_title">选项卡3</span>
+		<div class="tab_content">
+			<p>我是选项卡3</p>
+		</div>
+	</div>
 </div>
 </body>
 </html>
