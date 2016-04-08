@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>CSS-Dropdown</title>
+    <style>
+        .menu{width: 100%; height: 50px;text-align: center;}
+        .menu li{float: left;margin-right: 1px;width: 30%;height: 100%;background-color: #ccc;padding: 0;}
+        .menu li:last-child{margin-right: 0px;}
+        .dropdown{position: relative;}
+        .dropdown-menu{visibility: hidden;position: absolute;width: 100%;margin: 0;padding: 0;}
+        .dropdown-left{left: 0;}
+        .dropdown-right{right: 0;}
+        .dropdown-menu li{float: none;width: 100%;list-style: none;}
+        .dropdown:hover > .dropdown-menu{visibility: inherit;}
+    </style>
+</head>
+<body>
+    <ul class='menu'>
+        <li class='dropdown'>
+            <span>menu 1</span>
+            <ul class="dropdown-menu">
+                <li>dropdown-menu1</li>
+                <li>dropdown-menu2</li>
+                <li class="dropdown">
+                    <span>dropdown-menu3 drop-menu</span>
+                    <ul class="dropdown-menu">
+                        <li>dropdown-menu31</li>
+                        <li>dropdown-menu32</li>
+                        <li>dropdown-menu33</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class='dropdown'>
+            <span>menu 2</span>
+            <div class="dropdown-menu">
+                aaaaaaaaaaaa
+            </div>
+        </li>
+        <li>menu 3</li>
+    </ul>
+</body>
+</html>
