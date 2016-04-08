@@ -2,16 +2,13 @@
 <head>
     <title>CSS-Accordion</title>
     <style>
-        .accordion-list{height: 100%}
-        .accordion-head{height: 10%;padding: 1%;margin: 1%;background: #ccc;}
-        .accordion-content{height: 0;background: #999;overflow: hidden;}
-        .accordion-head:hover ~ .accordion-content,.accordion-hover ~ .accordion-content{height: 30%;}
-
-
+        .accordion-head,.accordion-content{padding: 0;margin: 0;}
+        .accordion-item {height: 20px;overflow: hidden;background: #ccc;-webkit-transition: all 0.5s;}
+        .accordion-item:hover {height: 100px;background: #999;-webkit-transition: all 0.5s;}
     </style>
 </head>
 <body>
-    <div class='accordion-list'>
+    <div class='accordion'>
         <div class='accordion-item'>
             <h3 class='accordion-head'>Section 1</h3>
             <p class='accordion-content'>Section 1 Content</p>
@@ -24,8 +21,6 @@
             <h3 class='accordion-head'>Section 3</h3>
             <p class='accordion-content'>Section 3 Content</p>
         </div>
-
     </div>
-
 </body>
 </html>
