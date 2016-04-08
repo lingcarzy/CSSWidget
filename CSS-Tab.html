@@ -2,56 +2,68 @@
 <head>
 	<title>CSS-Tab</title>
 	<style>
-		.tabs_box {
-			width: 50%;
-			margin: 0 auto;
-			height: 250px;
-		}
-		.tab{
-			position: relative;
-			width: 100%;
-		}
-		.tab_title{
-			background-color: #666;
-			color: #ccc;
-			border: 1px solid #ccc;
-			overflow:none;
-			position: relative;
-		}
-		.tab_content{
-			visibility: hidden;
-		}
-		.firstshow .tab_content,.tab_title:hover ~ .tab_content{
-			visibility: inherit;
-		}
-		.tab_title:hover{
-			background-color: #333;
-			color: #fff;
-			border-bottom: 0;
-			z-index: 1;
-		}
+.tabs{
+	position: relative;
+	margin: 0;
+	padding: 15px;
+}
+.tab{
+	display: inline-block;
+	margin-right: 1px;
+	list-style-type: none;
+	font-size: 14px;
+}
+.tab:last-child{
+	margin-right: 0;
+}
+.tab a{
+	display: block;
+	padding: 10px 15px;
+	background: rgba(233,0,0,0.3);
+	text-decoration: none;
+	transition: all 0.5s ease;
+}
+.tab:target a{
+	background: rgba(233,0,0,0.1);
+}
+.tab a + .tab-content{
+	position: absolute;
+	left: 0;
+	height: 0;
+	padding: 0 15px;
+	overflow: hidden;
+	transition: all 0.1s ease;
+}
+.tab:target a + .tab-content{
+	height: 100%;
+	overflow: visible;
+	transition: all 0.5s ease;
+}
 	</style>
 </head>
 <body>
-<div class="tabs_box">
-	<div class="tab firstshow">
-		<span class="tab_title">选项卡1</span>
-		<div class="tab_content">
-			<p>我是选项卡1</p>
-		</div>
-	</div>
-	<div class="tab">
-		<span class="tab_title">选项卡2</span>
-		<div class="tab_content">
-			<p>我是选项卡2</p>
-		</div>
-	</div>
-	<div class="tab">
-		<span class="tab_title">选项卡3</span>
-		<div class="tab_content">
-			<p>我是选项卡3</p>
-		</div>
-	</div>
-</div>
+	<ul class="tabs">
+		<li id="tab1" class='tab'>
+			<a href="#tab1">Tab 1</a>
+			<div class="tab-content">
+				<h2>Heading 1</h2>
+				<p>Content 1</p>
+			</div>
+		</li>
+		<li id="tab2" class='tab'>
+			<a href="#tab2">Tab 2</a>
+			<div class="tab-content">
+				<h2>Heading 2</h2>
+				<p>Content 2</p>
+			</div>
+		</li>
+		<li id="tab3" class='tab'>
+			<a href="#tab3">Tab 3</a>
+			<div class="tab-content">
+				<h2>Heading 3</h2>
+				<p>Content 3</p>
+			</div>
+		</li>
+	</ul>
 </body>
 </html>
