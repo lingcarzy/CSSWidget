@@ -2,41 +2,66 @@
 <head>
     <title>CSS-Dropdown</title>
     <style>
-        .menu{width: 100%; height: 50px;text-align: center;}
-        .menu li{float: left;margin-right: 1px;width: 30%;height: 100%;background-color: #ccc;padding: 0;}
-        .menu li:last-child{margin-right: 0px;}
+        .menu{width: 100%; list-style: none; display: inline; margin: 0; padding: 10px 0 12px 0;color: #fff;}
+        .menu li{display: inline-block; position: relative; padding: 10px 20px; cursor: pointer;background: rgba(0,0,0,0.6);}
+        .menu li:hover { background: rgba(0,0,0,0.8);}
+
         .dropdown{position: relative;}
-        .dropdown-menu{visibility: hidden;position: absolute;width: 100%;margin: 0;padding: 0;}
+        .dropdown-menu{
+              display: none;
+              opacity: 0;
+              visibility: hidden;
+              position: absolute;
+              width: 200%;
+              margin-top: 10px;
+              padding: 0;
+              background: #fff;
+          }
         .dropdown-left{left: 0;}
         .dropdown-right{right: 0;}
-        .dropdown-menu li{float: none;width: 100%;list-style: none;}
-        .dropdown:hover > .dropdown-menu{visibility: inherit;}
+        .dropdown-menu li{
+            display: block;
+            color: #fff;
+        }
+        .dropdown-menu li:hover{
+            display: block;
+            color: #fff;
+        }
+        .dropdown:hover > .dropdown-menu{
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
     <ul class='menu'>
         <li class='dropdown'>
             <span>menu 1</span>
-            <ul class="dropdown-menu">
-                <li>dropdown-menu1</li>
-                <li>dropdown-menu2</li>
+            <ul class="dropdown-menu dropdown-left">
+                <li>dropdown-menu11</li>
+                <li>dropdown-menu12</li>
                 <li class="dropdown">
-                    <span>dropdown-menu3 drop-menu</span>
+                    <span>dropdown-menu13 drop-menu</span>
                     <ul class="dropdown-menu">
-                        <li>dropdown-menu31</li>
-                        <li>dropdown-menu32</li>
-                        <li>dropdown-menu33</li>
+                        <li>dropdown-menu131</li>
+                        <li>dropdown-menu132</li>
+                        <li>dropdown-menu133</li>
                     </ul>
                 </li>
             </ul>
         </li>
-        <li class='dropdown'>
+        <li>
             <span>menu 2</span>
-            <div class="dropdown-menu">
-                aaaaaaaaaaaa
-            </div>
         </li>
-        <li>menu 3</li>
+        <li class='dropdown'>
+            <span>menu 3</span>
+            <ul class="dropdown-menu dropdown-right">
+                <li>dropdown-menu31</li>
+                <li>dropdown-menu32</li>
+                <li>dropdown-menu33</li>
+            </ul>
+       </li>
     </ul>
 </body>
 </html>
